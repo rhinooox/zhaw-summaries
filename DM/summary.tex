@@ -15,16 +15,11 @@
 \maketitle
 
 \tableofcontents
-
-\section{Introduction}
-This is the introduction section.
-
+\newpage
 \section{Zahlenmengen}
 \subsection{Natürliche Zahlen}
 \(\mathbb{N} = \{0,1,2,3,4,5,6,...\}\)
-\(
-\mathbb{N} = \left\{ \sum_{i=0}^{n} i \mid n \in \mathbb{N} \right\}
-\)
+
 \subsection{Ganze Zahlen}
 \(\mathbb{Z} = \{...,-3,-2,-1,0,1,2,3,...\}\)
 \subsection{Rationale Zahlen}
@@ -32,13 +27,41 @@ This is the introduction section.
 \subsection{Reelle Zahlen}
 \(\mathbb{R} = \{ -2, 0, 1.5, \sqrt{2}, \pi, e, ... \}\)
 
-\section{Formulas}
+\section{Zahlensysteme}
 
-\section{Examples}
-\subsection{Example 1}
-Description and solution of example 1.
+\section{Prädikate}
+\subsection{Aussagen}
+\subsection{Quantoren}
+\subsubsection{Allquantor}
+\(\forall A\)
+\subsubsection{Existenzquantor}
+\(\exists A\)
+\subsection{Junktoren}
+\subsubsection{Negation}
+\(A \neg B \)
+\subsubsection{Konjunktion}
+\(A \wedge B\)
+\subsubsection{Disjunktion}
+\( \vee A\)
+\subsubsection{Implikation}
+\(B \Rightarrow A\)
+\subsubsection{Äquivalenz}
+\(B \Leftrightarrow A\)
 
-\subsection{Example 2}
-Description and solution of example 2.
+
+\section{Lemmas}
+\subsection{Lemma 1 - Transitivität der Implikation}
+Für alle Prädikate mit A,B und C mit \(A \Rightarrow B\) und \(B \Rightarrow C\) gilt \(A \Rightarrow C\).
+\subsection{Lemma 2 - Kontraposition}
+Für alle Prädikate mit A und B gilt \(A \Rightarrow B \Leftrightarrow \neg B \Rightarrow \neg A\).\\
+Beweis. Wir wenden die Junktorenregeln an:\\
+\begin{align*}
+    A \Rightarrow B \\
+    \Leftrightarrow \neg A \vee B && \text{Definition von A $\rightarrow$ B}\\
+    \Leftrightarrow B \vee \neg A && \text{Kommutativität}\\
+    \Leftrightarrow \neg\neg B \vee \neg A && \text{Doppelte Negation}\\
+    \Leftrightarrow \neg B \Rightarrow \neg A && \text{Definition von $\neg B \rightarrow \neg A$}\\
+\end{align*}
+
 
 \end{document}
