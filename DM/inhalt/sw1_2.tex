@@ -11,7 +11,17 @@ Reele Zahlen\\
 \section{Zahlensysteme}
 
 \section{Prädikate}
+Es sei n eine natürliche Zahl. Ein Ausdruck, in dem n viele
+(verschiedene) Variablen frei vorkommen und der bei Belegung (=
+Ersetzen) aller freien Variablen in eine Aussage übergeht, nennen wir
+ein n-stelliges Prädikat.
+\begin{itemize}
+    \item x > 3 ist ein 1-stelliges Prädikat.
+    \item x + y = z ist ein 3-stelliges Prädikat.
+    \item x ist eine natürliche Zahl 1-stelliges Prädikat.
+\end{itemize}
 \subsection{Aussagen}
+Aussagen sind 0-stellige Prädikate. Sie sind entweder wahr oder falsch.
 \subsection{Quantoren}
 \(\forall A\) (Allquantor)\\
 \(\exists A\) (Existenzquantor)
@@ -33,3 +43,26 @@ Assotiativ\\
 
 de Morgan\\
 \(\neg (A \wedge B) \Leftrightarrow \neg A \vee \neg B\)\\
+
+\section{Aussonderung}
+Ist A eine Menge und ist E (x) eine Eigenschaft (ein Prädikat), dann
+bezeichnen wir mit dem Term:
+\begin{align*}
+    x \in A | E(x)
+\end{align*}
+Beispiel: Menge aller Geraden Zahlen:
+\begin{align*}
+    \{x \in \mathbb{N} | \exists{y} \in \mathbb{N}(x= 2y)\}
+\end{align*}
+\section{Ersetzung}
+Ist A eine Menge und t(x) ein Ausdruck in x , dann schreiben wir
+\begin{align*}
+    t(A) = \{t(x) | x \in A\}
+\end{align*}
+für die Menge, die als Elemente alle Objekte von der Form t(x) mit
+x \(\in\) A enthält.\\\\
+Beispiel: Menge aller Quadratzahlen
+\begin{align*}
+    \{x^2 | x \in \mathbb{N}\}
+\end{align*}
+
