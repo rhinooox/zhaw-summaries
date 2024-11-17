@@ -1,0 +1,19 @@
+\section{Lemmas}
+\subsection{Transitivität der Implikation}
+Für alle Prädikate mit A,B und C mit \(A \Rightarrow B\) und \(B \Rightarrow C\) gilt \(A \Rightarrow C\).
+\subsection{Kontraposition}
+Für alle Prädikate mit A und B gilt \(A \Rightarrow B \Leftrightarrow \neg B \Rightarrow \neg A\).\\
+Beweis. Wir wenden die Junktorenregeln an:\\
+\begin{align*}
+    A \Rightarrow B \\
+    \Leftrightarrow \neg A \vee B && \text{Definition von A $\rightarrow$ B}\\
+    \Leftrightarrow B \vee \neg A && \text{Kommutativität}\\
+    \Leftrightarrow \neg\neg B \vee \neg A && \text{Doppelte Negation}\\
+    \Leftrightarrow \neg B \Rightarrow \neg A && \text{Definition von $\neg B \rightarrow \neg A$}\\
+\end{align*}
+\subsection{Symetrie und Antisymetrie schliessen sich nicht gegenseitig aus}
+Es sei A eine beliegende Menge und R eine beliebige Relation. auf A. Die folgenden Aussagen sind äquivalent:\\
+\begin{itemize}
+    \item Die Relation R ist in der gleichheitsrelation auf A enthalten: \(G \subseteq \{(x,x)|x \in A\}\)
+    \item Die Relation R ist symetrisch und antisymetrisch.
+\end{itemize}
