@@ -1,5 +1,105 @@
 \section{Mengenoperationen}
+\subsection{Potenzmengen}
+die Potenzmenge $\mathcal{P}(A)$ einer Menge A ist die Menge aller Teilmengen von A. Formal gilt:
+\begin{equation}
+\mathcal{P}(A) \coloneqq \{B \mid B \subseteq A\}
+\end{equation}
+Beispiel: 
+\begin{itemize}
+    \item $\mathcal{P}(\{1,2\}) = \{\emptyset, \{1\}, \{2\}, \{1,2\}\}$
+    \item $\mathcal{P}(\{\{a\}\}) = \{\emptyset, \{\{a\}\}\}$
+\end{itemize}
+
+Es gilt für beliebige Mengen A:
+\begin{itemize}
+    \item $A \in \mathcal{P}(A)$, weil jede Megne eine Teilmenge von sich selbst ist.
+    \item $\emptyset \in \mathcal{P}(A)$, weil die leere Menge Teilmenge jeder Menge ist.
+\end{itemize}
+{\bf! Sanity-Check}: $\mathcal{P}(A)$ hat $2^{|A|}$ Elemente.
+\subsection{Verenigung}
+Die Verenigung von zwei Mengen beinhaltet genau die Elemente, die in mindestens einer der beiden Mengen enthalten sind. Formal gilt:
+\begin{equation}
+A \cup B \coloneqq \{x \mid x \in A \vee x \in B\}
+\end{equation}
+Beispiel:
+\begin{itemize}
+    \item $\{1,2,3\} \cup \{3,4,5\} = \{1,2,3,4,5\}$
+    \item $\mathbb{Z} = \{-n \mid n \in \mathbb{N} \cup \mathbb{N}\}$
+\end{itemize}
+\begin{itemize}
+    \item Möchte man beliebig viele Mengen vereinigen, d.h. alle
+    Mengen, die Element einer beliebigen Menge M von Mengen
+    sind, dann ist ein Existenzquantor nötig.
+    \begin{equation}
+        \bigcup_{A \in M} A \coloneqq \{x \mid \exists{A} \in M(x \in A)\}
+    \end{equation}
+    \item Sind die Mengen die man vereinigen möchte indexiert, d.H. M ist in der Form $M = \{A_i \mid i \in I\}$,
+    dann verwenden wir auch die folgenden Notation:
+    \begin{equation}
+        \bigcup_{i \in I} A_i \coloneqq \bigcup_{A \in M} = \{x \mid \exists{i} \in I(x \in A_i)\}
+    \end{equation}
+\end{itemize}
+
+{\bf Eigenschaften von $\cup$}
+\begin{itemize}
+    \item Kommutativität $A \cup B = B \cup A$
+    \item Assoziativität $(A \cup B) \cup C = A \cup (B \cup C)$
+    \item Idempotenz $A \cup A = A$
+    \item $A \subseteq A \cup B$
+    \item $A \subseteq B \Leftrightarrow B = A \cup B$
+\end{itemize}
+
+\subsection{Schnittmengen}
+ Die Schnittmenge von zwei Mengen beinhaltet genau die Elemente, die in beiden Mengen enthalten sind:
+    \begin{equation}
+        A \cap B \coloneqq \{x \mid x \in A \wedge x \in B\}
+    \end{equation}
+Beispiel:
+\begin{itemize}
+    \item $\{1,2,3\} \cap \{2,3,4,5\} = \{2,3\}$
+    \item $\mathbb{N} = \{r \in \mathbb{R} \mid r \geq 0\} \cap \mathbb{Z}$
+\end{itemize}
+\begin{itemize}
+    \item Möchte man beliebig viele Mengen schneiden, d.h. alle
+    Mengen, die Element einer beliebigen Menge M von Mengen
+    sind, dann ist ein Allquantor nötig.
+    \begin{equation}
+        \bigcap_{A \in M} A \coloneqq \{x \mid \forall{A} \in M(x \in A)\}
+    \end{equation}
+    \item Wenn man sie indexiert haben möchte d.H. M ist in der Form $M = \{A_i \mid i \in I\}$, dann so:
+    \begin{equation}
+        \bigcap_{i \in I} A_i \coloneqq \bigcap_{A \in M}A = \{x \mid \forall{i} \in I(x \in A_i)\}
+    \end{equation}
+\end{itemize}
+{\bf Eigenschaften von $\cap$}
+\begin{itemize}
+    \item Kommutativität $A \cap B = B \cap A$
+    \item Assoziativität $(A \cap B) \cap C = A \cap (B \cap C)$
+    \item Idempotenz $A \cap A = A$
+    \item $A \cap B \subseteq A$
+    \item $A \subseteq B \Leftrightarrow A \cap B = A $
+\end{itemize}
+\subsection{Disjunkte Mengen}
+\begin{itemize}
+    \item zwei Mengen A und B heissen {\bf disjunkt}, wenn $A \cap B = \emptyset$ gilt.
+    \item Eine Menge $M = \{A_i \mid i \in I\}$ von Mengen heissen {\bf paarweise disjunkt}, 
+    wenn für alle aus $i \neq j$ gilt $A_i \cap A_j = \emptyset$ folgt.
+\end{itemize}
+\subsection{Differenzmengen}
+Sind A und B Mengen, dann bezeichnen wir mit
+\begin{equation}
+    A \setminus B \coloneqq \{x \in A \mid x \notin B\}
+\end{equation}
+die Differenz (A ohne B ) von A und B
+{\bf Interaktion von $\cup$,$\cap$ und $\setminus$}
+Sind A, B und C beliebige Mengen, dann gilt:
+\begin{itemize}
+    \item De Morgan: $C \setminus (A \cap B) = (C \setminus A) \cup (C \setminus B)$
+    \item De Morgan: $C \setminus (A \cup B) = (C \setminus A) \cap (C \setminus B)$
+    \item Distributivität: $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+    \item Distributivität: $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+\end{itemize}
 \section{Relationen}
 \subsection{Tupel und Produktmengen}
 \subsection{Relationen bildlich darstellen}
-\subsection{Klassifizierung von Relationen}
+\subsection{Klassifizierung von Relationen}  
