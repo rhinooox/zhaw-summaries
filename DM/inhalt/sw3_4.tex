@@ -1,4 +1,19 @@
 \section{Mengenoperationen}
+\subsection{Teilmengen}
+Eine Menge A ist Teilmenge einer Menge B, geschrieben $A \subseteq B$, falls alle Elemente von A auch Elemente von B sind.
+Formal gilt:
+\begin{equation}
+    A \subseteq B \Leftrightarrow \forall{x}(x \in A \Rightarrow x \in B)
+\end{equation}
+Eine Teilmenge A  von B ist eine echte Teilmenge, wenn $A \neq B$ gilt. Wir schreiben $A \subset B$,
+wenn A eine echte Teilmenge von B ist.
+
+\subsubsection{Extensionalitätsprinzip}
+Mithilfe der Teilmengenrelation lässt sich das Extensionalitätsprinzip wie folgt formulieren:
+\begin{equation}
+    A = B \Leftrightarrow A \subseteq B \wedge B \subseteq A
+\end{equation}
+
 \subsection{Potenzmengen}
 die Potenzmenge $\mathcal{P}(A)$ einer Menge A ist die Menge aller Teilmengen von A. Formal gilt:
 \begin{equation}
@@ -91,7 +106,7 @@ Sind A und B Mengen, dann bezeichnen wir mit
     A \setminus B \coloneqq \{x \in A \mid x \notin B\}
 \end{equation}
 die Differenz (A ohne B ) von A und B
-{\bf Interaktion von $\cup$,$\cap$ und $\setminus$}
+\subsubsection{Interaktion von $\cup$,$\cap$ und $\setminus$}
 Sind A, B und C beliebige Mengen, dann gilt:
 \begin{itemize}
     \item De Morgan: $C \setminus (A \cap B) = (C \setminus A) \cup (C \setminus B)$
@@ -100,6 +115,90 @@ Sind A, B und C beliebige Mengen, dann gilt:
     \item Distributivität: $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
 \end{itemize}
 \section{Relationen}
+\subsection{Definition}
+Eine relation von A nach B ist ein Tripel $R = (G,A,B)$ bestehend aus:
+\begin{itemize}
+    \item Einer (beliebigen) Menge A, genannt die Quellmenge der Relation.
+    \item Einer (beliebigen) Menge B, genannt die Zielmenge der
+    Relation.
+    \item Einer Menge $G \subseteq A \times B$ genannt der Graph der Relation. Gilt $A = B$m dann 
+    nennen wir R eine homogene Relation auf A.
+\end{itemize}
+\subsubsection{Notationen}
+\begin{itemize}
+    \item $G_r$ ist der Graph
+    \item $(G,A,A)$ kann man auch als $(G,A)$ schreiben.
+    \item Ist $(x,y) \in G$, dann schreiben wir auch $xRy$ und sagen x steht in Relation zu y.
+\end{itemize}
 \subsection{Tupel und Produktmengen}
-\subsection{Relationen bildlich darstellen}
-\subsection{Klassifizierung von Relationen}  
+\subsubsection{Tupel}
+\begin{itemize}
+    \item Ein n-Tupel ist ein Objekt von der Form ($a_1,...,a_n$)
+    \item Der i-ten (für $1 \leq i \leq  n$) Eintrag $a_i$ eines Tupels $a = (a_1,...,a_n)$ bezeichnen wir auch mit $a[i]$.
+\end{itemize}
+Damit Tupel gleich sind müssen sie genau die gleiche innere Struktur haben.
+\begin{itemize}
+    \item $(1,2,3) \neq (1,3,2)$
+    \item $(1,2) \neq (1,1,2)$
+\end{itemize}
+\subsubsection{Kartesisches Produkt}
+Das kartesische Produkt von Mengen $A_1,...,A_n$, ist die Menge
+aller n-Tupel mit Einträgen aus $A_1,...,A_n$
+
+\begin{equation}
+    A_1 \times ... \times A_n \coloneqq \{(a_1,...,a_n) \mid a_1 \in A_1 \wedge...\wedge a_n \in A_n\}
+\end{equation}
+
+Beispiel:
+\begin{itemize}
+    \item $\{1\} \times \{a,b\} = \{(1,a),(1,b)\}$
+    \item $\mathbb{N}^{2} \times \{0,1\} = \{((x,y),0) \mid x \in \mathbb{N} \wedge y \in \mathbb{N}\} \cup \{((x,y),1) \mid x \in \mathbb{N} \wedge y \in \mathbb{N}\} $
+\end{itemize}
+\subsubsection{Projektionen}
+Ist A eine Menge von n-Tupeln und ist $k \leq n$ eine natürliche Zahl,
+dann nennen wir die Menge
+\begin{equation}
+    pr_{k}(A) = \{x[k] \mid x \in A\}
+\end{equation}
+die k-te Projektion von A.\\\\
+Beispiel:
+\begin{itemize}
+    \item $pr_{1}(\{(a,b)\}) = \{a\}$
+    \item $pr_{1}(\{(1,2),(2,7),(1,5)\}) = \{1,2\}$
+    \item $pr_{2}(\{(1,2),(2,7),(1,5)\}) = \{2,7,5\}$
+\end{itemize}
+\subsection{Darstellung von Relationen}
+\subsubsection{Gerichteter Graph}
+\NewAdigraph{Nikolaus}{
+1:0,0;
+2:2,2;
+3:2,-1;
+4:3,0}{1,1; 1,2;
+1,3; 1,4; 2,4; 2,2; 4,4; 3,3;}
+\Nikolaus{}
+\\$xRy: \Leftrightarrow x$ teilt $y$
+\subsection{Domain}
+Es sei $R = (G,A,B)$ eine Relation.
+\begin{itemize}
+    \item Die Domäne von R entpsricht der Projektion auf die erste Komponente vom Graph von R:
+    \begin{equation}
+        \text{dom}(R) = pr_{1}(G_R)
+    \end{equation}
+    \item Ist die Relation R als gerichteter Graph dargestellt, dann
+    entspricht die Domäne der Menge aller Punkte, von denen
+    mindestens ein Pfeil ausgeht.
+\end{itemize}
+\subsection{Image}
+Es sei $R = (G,A,B)$ eine Relation. Die Bildmenge einer Relation R besteht aus den Elementen aus der Ziemlenge
+welche zu  mind. einem Element aus der Quellmenge in Relation stehen:
+\begin{equation}
+    \text{im}(R) \eqqcolon \{b \in B \mid \exists{a} \in A (aRb)\}
+\end{equation}
+
+\subsection{Klassifizierung von Relationen} 
+\subsubsection{Reflexivität}
+\subsubsection{Symmetrie}
+\subsubsection{Antisymmetrie}
+\subsubsection{Transitivität} 
+\subsubsection{Totalität}
+\subsubsection{Eindeutigkeit}
