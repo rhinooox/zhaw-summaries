@@ -16,33 +16,45 @@ Es sei n eine natürliche Zahl. Ein Ausdruck, in dem n viele
 Ersetzen) aller freien Variablen in eine Aussage übergeht, nennen wir
 ein n-stelliges Prädikat.
 \begin{itemize}
-    \item x > 3 ist ein 1-stelliges Prädikat.
-    \item x + y = z ist ein 3-stelliges Prädikat.
+    \item $x > 3$ ist ein 1-stelliges Prädikat.
+    \item $x + y = z$ ist ein 3-stelliges Prädikat.
     \item x ist eine natürliche Zahl 1-stelliges Prädikat.
 \end{itemize}
 \subsection{Aussagen}
 Aussagen sind 0-stellige Prädikate. Sie sind entweder wahr oder falsch.
 \subsection{Quantoren}
-\(\forall A\) (Allquantor aka für jedes Element)\\
-\(\exists A\) (Existenzquantor aka mind. ein Element)
+\begin{itemize}
+    \item \(\forall A\) (Allquantor aka für jedes Element)
+    \item \(\exists A\) (Existenzquantor aka mind. ein Element)
+\end{itemize}
 \subsection{Junktoren}
-\(A \neg B\) (Negation)\\
-\(A \wedge B\) (Konjunktion)\\
-\(A \vee B\) (Disjunktion)\\
-\(A \Rightarrow B\) (Implikation)\\
-\(A \Leftrightarrow B\) (Äquivalenz)
+\begin{itemize}
+    \item \(A \neg B\) (Negation)
+    \item \(A \wedge B\) (Konjunktion)
+    \item \(A \vee B\) (Disjunktion)
+    \item \(A \Rightarrow B\) (Implikation)
+    \item \(A \Leftrightarrow B\) (Äquivalenz)
+\end{itemize}
 
 \section{Gesetze und Umformungen}
-Distributiv\\
-\(A \wedge (B \vee C) \Leftrightarrow (A \wedge B) \vee (A \wedge C)\)\\
-\(A \vee (B \wedge C) \Leftrightarrow (A \vee B) \wedge (A \vee C)\)\\
-
-Assotiativ\\
-\(A \wedge (B \wedge C) \Leftrightarrow (A \wedge B) \wedge C\)\\
-\(A \vee (B \vee C) \Leftrightarrow (A \vee B) \vee C\)\\
-
-de Morgan\\
-\(\neg (A \wedge B) \Leftrightarrow \neg A \vee \neg B\)\\
+\begin{itemize}
+    \item Distributiv:
+        \begin{itemize}
+            \item \(A \wedge (B \vee C) \Leftrightarrow (A \wedge B) \vee (A \wedge C)\)
+            \item \(A \vee (B \wedge C) \Leftrightarrow (A \vee B) \wedge (A \vee C)\)
+        \end{itemize}
+    
+    \item Assoziativ:
+        \begin{itemize}
+            \item \(A \wedge (B \wedge C) \Leftrightarrow (A \wedge B) \wedge C\)
+            \item \(A \vee (B \vee C) \Leftrightarrow (A \vee B) \vee C\)
+        \end{itemize}
+    
+    \item de Morgan:
+        \begin{itemize}
+            \item \(\neg (A \wedge B) \Leftrightarrow \neg A \vee \neg B\)
+        \end{itemize}
+\end{itemize}
 
 \section{Aussonderung}
 Ist A eine Menge und ist E(x) eine Eigenschaft (ein Prädikat), dann
