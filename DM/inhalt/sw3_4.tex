@@ -169,15 +169,15 @@ Beispiel:
 \end{itemize}
 \subsection{Darstellung von Relationen}
 \subsubsection{Gerichteter Graph}
-\NewAdigraph{Nikolaus}{
+\NewAdigraph{gerichtet}{
 1:0,0;
 2:2,2;
 3:2,-1;
 4:3,0}{1,1; 1,2;
 1,3; 1,4; 2,4; 2,2; 4,4; 3,3;}
-\Nikolaus{}
+\gerichtet{}
 \\$xRy: \Leftrightarrow x$ teilt $y$
-\subsection{Domain}
+\subsubsection{Domain}
 Es sei $R = (G,A,B)$ eine Relation.
 \begin{itemize}
     \item Die Domäne von R entpsricht der Projektion auf die erste Komponente vom Graph von R:
@@ -188,7 +188,7 @@ Es sei $R = (G,A,B)$ eine Relation.
     entspricht die Domäne der Menge aller Punkte, von denen
     mindestens ein Pfeil ausgeht.
 \end{itemize}
-\subsection{Image}
+\subsubsection{Image}
 Es sei $R = (G,A,B)$ eine Relation. Die Bildmenge einer Relation R besteht aus den Elementen aus der Ziemlenge
 welche zu  mind. einem Element aus der Quellmenge in Relation stehen:
 \begin{equation}
@@ -197,8 +197,155 @@ welche zu  mind. einem Element aus der Quellmenge in Relation stehen:
 
 \subsection{Klassifizierung von Relationen} 
 \subsubsection{Reflexivität}
+Eine (homogene) Relation R auf A heisst reflexiv, wenn jedes
+Element (aus der Quellmenge) mit sich selbst in Relation steht:
+\begin{equation}
+    \forall{x} \in A(xRx)
+\end{equation}
+\NewAdigraph{reflexiv}{
+1:0,0;
+2:1.5,1;
+3:1.5,-1
+}
+{
+1,1;
+2,2;
+3,3;
+1,2;
+2,3
+}
+\reflexiv{}
 \subsubsection{Symmetrie}
+Eine (homogene) Relation R auf A ist symetrisch, falls:
+\begin{equation}
+    \forall{x,y} (xRy \Rightarrow yRx)
+\end{equation}
+\NewAdigraph{symetrisch}{
+1:0,0;
+2:1.5,-0.5;
+3:3,0
+}
+{
+1,2;
+2,1;
+2,3;
+3,2;
+}
+\symetrisch{}
 \subsubsection{Antisymmetrie}
+Eine (homogene) Relation R auf A ist antisymetrisch, falls:
+\begin{equation}
+    \forall{x,y} (xRy \wedge yRx \Rightarrow x = y)
+\end{equation}
+\NewAdigraph{antisymmetrisch}{
+1:0,0;
+2:1.5,-0.5;
+3:3,0
+}
+{
+1,2;
+2,1;
+2,3;
+}
+\antisymmetrisch{}
+\\Ein Graph kann symmetrisch, antisymmetrisch, weder noch, oder beides zusammen sein.
 \subsubsection{Transitivität} 
-\subsubsection{Totalität}
-\subsubsection{Eindeutigkeit}
+Eine (homogene) Relation R auf einer Menge A heisst transitiv,
+falls
+\begin{equation}
+    \forall{x,y,z} (xRy \wedge yRz \Rightarrow xRz)
+\end{equation}
+gilt.\\\\
+Ein Graph ist transitiv, wenn jede ''Abkürzung'' drin ist:\\
+\NewAdigraph{transitiv}{
+1:0,0;
+2:1.5,1;
+3:1.5,-1;
+4:3,0
+}
+{
+1,1;
+2,2;
+3,3;
+4,4;
+1,2;
+2,4;
+1,4;
+}
+\transitiv{}
+\subsubsection{linksvollständig / linkstotal}
+Für  $R = (G,A,B)$...
+    \begin{equation}
+        A = dom(R)
+    \end{equation}
+\NewAdigraph{linkstotal}{
+    A1:0,1;
+    A2:0,0;
+    A3:0,-1;
+    B1:2,0.5;
+    B2:2,-0.5
+    }
+    {
+    A2,B1;
+    A1,B1;
+    A3,B1
+    }
+\linkstotal{}
+\subsubsection{rechtsvollständig / rechtstotal}
+Für  $R = (G,A,B)$...
+    \begin{equation}
+        B = im(R)
+    \end{equation}
+    \NewAdigraph{rechtstotal}{
+        A1:0,1;
+        A2:0,0;
+        A3:0,-1;
+        B1:2,0.5;
+        B2:2,-0.5
+        }
+        {
+        A3,B2;
+        A1,B1;
+        A3,B2
+        }
+    \rechtstotal{}
+\subsubsection{linkseindeutig}
+Für  $R = (G,A,B)$...
+    \begin{equation}
+        \forall{x_1,x_2,y}(x_1Ry \wedge x_2Ry \Rightarrow x_1 = x_2)
+    \end{equation}
+\NewAdigraph{linkseindeutig}{
+    A1:0,1;
+    A2:0,0;
+    A3:0,-1;
+    B1:2,1.5;
+    B2:2,0.5;
+    B3:2,-0.5;
+    B4:2,-1.5
+    }
+    {
+    A1,B2;
+    A2,B1;
+    A2,B3;
+    A3,B4
+    }
+\linkseindeutig{}
+\subsubsection{rechtseindeutig}
+Für  $R = (G,A,B)$...
+    \begin{equation}
+        \forall{x,y_1,y_2}(xRy_1 \wedge xRy_2 \Rightarrow y_1 = y_2)
+    \end{equation}
+    \NewAdigraph{rechtseindeutig}{
+        A1:0,1;
+        A2:0,0;
+        A3:0,-1;
+        B1:2,1.5;
+        B2:2,0.5;
+        B3:2,-0.5;
+        B4:2,-1.5
+        }
+        {
+        A1,B2;
+        A2,B2
+        }
+    \rechtseindeutig{}

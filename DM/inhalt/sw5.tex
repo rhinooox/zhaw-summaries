@@ -1,0 +1,89 @@
+\section{Funktionen $\rightarrow$}
+Damit eine Relation eine Funktionen ist, muss sie folgende Eigenschaften haben:
+\begin{itemize}
+    \item \textbf{rechtseindeutig}
+    \item \textbf{linksvollständig}
+\end{itemize}
+\subsection{Injektive Funktionen $\hookrightarrow$}
+Damit eine Funktionen injektiv ist muss sie folgende Eigenschaften haben:
+\begin{itemize}
+    \item \textbf{linksvollständig}
+    \item \textbf{rechtseindeutig}
+    \item \textbf{linkseindeutig}
+\end{itemize}
+Eine Funktionen $f : A \rightarrow B$ heisst injektiv, falls unterschiedliche Ipunts stets in
+unterschiedlichen Outputs resultieren:
+\begin{equation}
+    \forall{x_1, x_2} \in A(x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2))
+\end{equation}
+\newline
+\NewAdigraph{injektiv}{
+    A1:0,1;
+    A2:0,0;
+    A3:0,-1;
+    B1:2,0.5;
+    B2:2,-0.5
+    }
+    {
+    A1,B1;
+    A2,B1;
+    A3,B2
+    }
+\injektiv{}
+\newline
+\newline
+\subsection{Surjektive Funktionen $\twoheadrightarrow$}
+Damit eine Funktionen injektiv ist muss sie folgende Eigenschaften haben:
+\begin{itemize}
+    \item \textbf{linksvollständig}
+    \item \textbf{rechtseindeutig}
+    \item \textbf{rechtsvollständig}
+\end{itemize}
+Eine Funktion $f = (G,A,B)$ heisst surjektiv, falls $im(f) = B$ gilt.
+\newline
+\newline
+\NewAdigraph{surjektiv}{
+    A1:0,1;
+    A2:0,0;
+    B1:2,1;
+    B2:2,0;
+    B3:2,-1
+    }
+    {
+    A1,B1;
+    A2,B2;
+    }
+\surjektiv{}
+\newline
+\subsection{Bijektive Funktionen $\rightleftharpoons$}
+Damit eine Funktionen injektiv ist muss sie folgende Eigenschaften haben:
+\begin{itemize}
+    \item \textbf{linksvollständig}
+    \item \textbf{rechtsvollständig}
+    \item \textbf{rechtseindeutig}
+    \item \textbf{linkseindeutig}  
+\end{itemize}
+Oder anders gesagt: Eine Funktion $f : A \rightarrow B$ heisst bijektiv, 
+falls sie sowohl injektiv als auch surjektiv ist.
+\subsection{Umkehrfunktionen}
+Für die Umkehrfunktionen einfach nach x auflösen und dann x und y vertauschen.\\
+Eigenschaften von Umkehrfunktionen:
+\begin{itemize}
+    \item Für jede Relation R gilt $R^{-1^{-1}} = R$
+    \item R ist genau dann linksvollständig, wenn $R^{-1}$ rechtseindeutig ist.
+    \item R ist genau dann linkseindeutig, wenn $R^{-1}$ rechtseindeutig ist.
+\end{itemize}
+\subsection{Komposition}
+Für $g: A \rightarrow B $ und $f: B \rightarrow C$ definieren wir:
+\begin{equation}
+    f \circ g: A \rightarrow C
+\end{equation}
+\begin{equation}
+    (f \circ g)(x) = f(g(x))
+\end{equation}
+Wörtlich sagt man auch ''f nach g'' da f nach g ausgeführt wird bzw. g zuerst ausgeführt wird.
+\subsubsection{Assoziativität}
+Für $f: A \rightarrow B$, $g: B \rightarrow C$ und $h: C \rightarrow D$ gilt:
+\begin{itemize}
+    \item $(f \circ g) \circ h = f \circ (g \circ h)$
+\end{itemize}
