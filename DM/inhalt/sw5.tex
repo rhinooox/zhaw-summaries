@@ -13,25 +13,24 @@ Damit eine Funktionen injektiv ist muss sie folgende Eigenschaften haben:
 \end{itemize}
 Eine Funktionen $f : A \rightarrow B$ heisst injektiv, falls unterschiedliche Ipunts stets in
 unterschiedlichen Outputs resultieren:
-\begin{equation}
+\begin{align*}
     \forall{x_1, x_2} \in A(x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2))
-\end{equation}
-\newline
-\NewAdigraph{injektiv}{
-    A1:0,1;
-    A2:0,0;
-    A3:0,-1;
-    B1:2,0.5;
-    B2:2,-0.5
-    }
-    {
-    A1,B1;
-    A2,B1;
-    A3,B2
-    }
-\injektiv{}
-\newline
-\newline
+\end{align*}
+\begin{center}
+    \NewAdigraph{injektiv}{
+        A1:0,1;
+        A2:0,0;
+        A3:0,-1;
+        B1:2,0.5;
+        B2:2,-0.5
+        }
+        {
+        A1,B1;
+        A2,B1;
+        A3,B2
+        }
+    \injektiv{}
+\end{center}
 \subsection{Surjektive Funktionen $\twoheadrightarrow$}
 Damit eine Funktionen injektiv ist muss sie folgende Eigenschaften haben:
 \begin{itemize}
@@ -40,21 +39,20 @@ Damit eine Funktionen injektiv ist muss sie folgende Eigenschaften haben:
     \item \textbf{rechtsvollständig}
 \end{itemize}
 Eine Funktion $f = (G,A,B)$ heisst surjektiv, falls $im(f) = B$ gilt.
-\newline
-\newline
-\NewAdigraph{surjektiv}{
-    A1:0,1;
-    A2:0,0;
-    B1:2,1;
-    B2:2,0;
-    B3:2,-1
-    }
-    {
-    A1,B1;
-    A2,B2;
-    }
-\surjektiv{}
-\newline
+\begin{center}
+    \NewAdigraph{surjektiv}{
+        A1:0,1;
+        A2:0,0;
+        B1:2,1;
+        B2:2,0;
+        B3:2,-1
+        }
+        {
+        A1,B1;
+        A2,B2;
+        }
+    \surjektiv{}
+\end{center}
 \subsection{Bijektive Funktionen $\rightleftharpoons$}
 Damit eine Funktionen injektiv ist muss sie folgende Eigenschaften haben:
 \begin{itemize}
@@ -75,12 +73,12 @@ Eigenschaften von Umkehrfunktionen:
 \end{itemize}
 \subsection{Komposition}
 Für $g: A \rightarrow B $ und $f: B \rightarrow C$ definieren wir:
-\begin{equation}
+\begin{align*}
     f \circ g: A \rightarrow C
-\end{equation}
-\begin{equation}
+\end{align*}
+\begin{align*}
     (f \circ g)(x) = f(g(x))
-\end{equation}
+\end{align*}
 Wörtlich sagt man auch ''f nach g'' da f nach g ausgeführt wird bzw. g zuerst ausgeführt wird.
 \subsubsection{Assoziativität}
 Für $f: A \rightarrow B$, $g: B \rightarrow C$ und $h: C \rightarrow D$ gilt:
