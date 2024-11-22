@@ -21,18 +21,20 @@ unterschiedlichen Outputs resultieren:
         A1:0,1;
         A2:0,0;
         A3:0,-1;
-        B1:2,0.5;
-        B2:2,-0.5
+        B1:2,1;
+        B2:2,0;
+        B3:2,-1;
+        B4:2,-2
         }
         {
         A1,B1;
-        A2,B1;
-        A3,B2
+        A2,B2;
+        A3,B4
         }
     \injektiv{}
 \end{center}
 \subsection{Surjektive Funktionen $\twoheadrightarrow$}
-Damit eine Funktionen injektiv ist muss sie folgende Eigenschaften haben:
+Damit eine Funktionen surjektiv ist muss sie folgende Eigenschaften haben:
 \begin{itemize}
     \item \textbf{linksvollständig}
     \item \textbf{rechtseindeutig}
@@ -43,6 +45,8 @@ Eine Funktion $f = (G,A,B)$ heisst surjektiv, falls $im(f) = B$ gilt.
     \NewAdigraph{surjektiv}{
         A1:0,1;
         A2:0,0;
+        A3:0,-1;
+        A4:0,-2;
         B1:2,1;
         B2:2,0;
         B3:2,-1
@@ -50,11 +54,13 @@ Eine Funktion $f = (G,A,B)$ heisst surjektiv, falls $im(f) = B$ gilt.
         {
         A1,B1;
         A2,B2;
+        A3,B2;
+        A4,B3
         }
     \surjektiv{}
 \end{center}
 \subsection{Bijektive Funktionen $\rightleftharpoons$}
-Damit eine Funktionen injektiv ist muss sie folgende Eigenschaften haben:
+Damit eine Funktionen bijektiv ist muss sie folgende Eigenschaften haben:
 \begin{itemize}
     \item \textbf{linksvollständig}
     \item \textbf{rechtsvollständig}
