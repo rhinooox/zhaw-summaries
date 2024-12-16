@@ -1,1 +1,1 @@
-# discrete-mathematics-cheatsheet
+# ZHAW Zusammenfassungen
