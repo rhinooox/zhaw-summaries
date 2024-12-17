@@ -1,0 +1,54 @@
+\section{Zahlensysteme}
+
+\textbf{Umrechnen von Dezimalzahlen in andere Zahlensysteme}\\\\
+Die Dezimalzahl 338 wird ins 5er-System umgewandelt:
+\begin{itemize}
+    \item 338 : 5 = 67 Rest 3
+    \item 67 : 5 = 13 Rest 2
+    \item 13 : 5 = 2 Rest 3
+    \item 2 : 5 = 0 Rest 2
+    \item Rückwärts gelesen: 2323
+\end{itemize}
+\bigskip
+\textbf{Umrechnen von anderen Zahlensystemen in Dezimalzahlen}\\\\
+Die Zahl 20022 (3er-System) wird ins Dezimalsystem umgewandelt:
+\begin{itemize}
+    \item 2 * 3\textsuperscript{0} = 2
+    \item 2 * 3\textsuperscript{1} = 6
+    \item 0 * 3\textsuperscript{2} = 0
+    \item 0 * 3\textsuperscript{3} = 0
+    \item 2 * 3\textsuperscript{4} = 162
+    \item 2 + 6 + 0 + 0 + 162 = 170
+\end{itemize}
+\subsection{Negative Zahlen}
+\subsubsection{Einerkomplement}
+\begin{itemize}
+    \item 1. Die Zahl $-6$ wird ins Dualsystem umgewandelt: $6 = 0110$
+    \item 2. Das Einerkomplement wird gebildet, indem alle Bits invertiert werden: $1001$
+    \item 3. Das Ergebnis ist $-6$ im Einerkomplement: $1001$
+    \end{itemize}
+\subsubsection{Zweierkomplement}
+\begin{itemize}
+    \item 1. Subtraktion ist auch eine Addition mit einer negativen Zahl $2 - 6 = 2 + (-6) = -4$
+    \item 2. Die Addition $2 + (-6)$ aufschreiben
+    \item 3. Zahlen aus dem Dezimal- ins Dualsystem umschreiben. $2 = 0010 ; 6 = 0110$
+    \item 4. Da wir mit einer negativen Zahl rechnen $-6$, müssen wir das Komplement ($1001$) bilden und mit $1$ ($0001$) addieren, damit wir das sogenannte Zweierkomplement erhalten.
+    \item 5. Addition vom Komplement und $1$: 
+    \begin{align*}
+        1001\\
+        +0001\\
+        \hline
+        1010
+    \end{align*}
+    \item 6. Addition mit der $2$ und $-6$ \\
+    $2 + (-6)$:
+    \begin{align*}
+        0010\\
+        1010\\
+        \hline
+        1100\\
+        = -4
+    \end{align*}
+\end{itemize}
+\bigskip
+Kurzgesagt: Um ein Zweierkomplement zu bilden muss man invertieren und mit$ 1$ ($0001$) addieren.
