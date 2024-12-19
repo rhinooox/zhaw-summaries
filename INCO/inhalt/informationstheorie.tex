@@ -39,8 +39,9 @@
 \subsection{Entropie}
 Den mittleren Informationsgehalt von Quellen nennt man Entropie:
 \begin{equation*}
-    H(X) = \sum_{n=0}^{N-1} P(x_n) \cdot I(x_n) = \sum_{n=0}^{N-1} P(x_n) \cdot log_2(P(x_n))
+    H(X) = \sum_{n=0}^{N-1} P(x_n) \cdot log_2(\frac{1}{P(x_n)}) = \sum_{n=0}^{N-1} P(x_n) \cdot I(x_n)
 \end{equation*}
+
 Die Masseinheit der Entropie ist $Bit/Symbol$.
 \subsubsection{Entropie Binary Memoryless Source}
 Eine BMS kennt nur zwei Symbole. Ist $p$ die Auftretungswahrscheinlichkeit des eines Symbols, folgt dass $(1-p)$ jene des anderen Symbols ist.
