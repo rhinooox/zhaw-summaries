@@ -1,10 +1,16 @@
 \section{Digitaltechnik}
+
 \subsection{Operatoren}
+\includegraphics[scale=0.3]{img/symbols}
+\subsection{Flip-Flops}
+Flip-Flops sind Speicherelemente, die den Zustand speichern und bei einem Taktimpuls den Zustand ändern.
+Ein normaler "D-Flip-Flop" kann genau ein Bit Information speichern.
 \begin{itemize}
-    \item \textbf{UND-Verknüpfung} (AND): $A \cdot B$
-    \item \textbf{ODER-Verknüpfung} (OR): $A + B$
-    \item \textbf{NICHT-Verknüpfung} (NOT): $\overline{A}$
-    \item \textbf{Exklusiv-ODER-Verknüpfung} (XOR): $A \oplus B$
-    \item \textbf{NAND-Verknüpfung}: $\overline{A \cdot B}$
-    \item \textbf{NOR-Verknüpfung}: $\overline{A + B}$
+    \item Clock $C$
+    \item Data $D$
+    \item Ausgang $Q$
 \end{itemize}
+
+\begin{circuitikz}
+    \node[flipflop DQ](ff1){};
+  \end{circuitikz}

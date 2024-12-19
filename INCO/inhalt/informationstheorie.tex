@@ -17,7 +17,7 @@
 \begin{equation*}
     x = log_2(K) = \frac{log_{10}(K)}{log_{10}(2)}
 \end{equation*}
-\subsection{Gleiche Wahrscheinlichkeit}
+\subsection{Gleiche Wahrscheinlichkeit $P(x_n)$}
 \begin{itemize}
     \item Je mehr Fälle es gibt, desto seltener tritt ein bestimmtes Ereignis ein.
     \item Je seltener ein Ereignis ist, desto höher ist sein Informationsgehalt.
@@ -27,7 +27,7 @@
         P(x_n) = \frac{1}{N} \rightarrow N = \frac{1}{P(x_n)}
     \end{equation*}
 \end{itemize}
-\subsection{Informationsgehalt von Ereignissen}
+\subsection{Informationsgehalt von Ereignissen $I(x_n)$}
 \begin{itemize}
     \item Je seltener ein Ereignis eintritt, desto grösser ist der
     Informationsgehalt (Überraschungseffekt)
@@ -36,7 +36,7 @@
         I(x_n) = log_2(\frac{1}{P(x_n)})
     \end{equation*}
 \end{itemize}
-\subsection{Entropie}
+\subsection{Entropie $H(X)$}
 Den mittleren Informationsgehalt von Quellen nennt man Entropie:
 \begin{equation*}
     H(X) = \sum_{n=0}^{N-1} P(x_n) \cdot log_2(\frac{1}{P(x_n)}) = \sum_{n=0}^{N-1} P(x_n) \cdot I(x_n)
@@ -48,4 +48,4 @@ Eine BMS kennt nur zwei Symbole. Ist $p$ die Auftretungswahrscheinlichkeit des e
 \begin{equation*}
     H_b = p  \cdot log_2(\frac{1}{p}) + (1-p)  \cdot log_2(\frac{1}{1-p})
 \end{equation*}
-\includegraphics[scale=0.25]{binaere_Entropiefunktion}
+\includegraphics[scale=0.32]{binaere_Entropiefunktion}

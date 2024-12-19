@@ -2,20 +2,25 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{adigraph}
 \usepackage{tikz}
 \usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
 \usepackage[nosf]{kpfonts}
 \usepackage[t1]{sourcesanspro}
 \usepackage{multicol}
 \usepackage{wrapfig}
-\usepackage[top=1mm,bottom=2mm,left=2mm,right=2mm]{geometry}
+\usepackage[top=2mm,bottom=2mm,left=2mm,right=2mm]{geometry}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{microtype}
 \usepackage{pdfpages}
 \usepackage{xfrac}
 \usepackage{tikz-cd}
 \usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{circuitikz}
+\tikzset{flipflop DQ/.style={flipflop, scale=1,
+         flipflop def={t1=D, t6=Q, c3=1,
+         clock wedge size=.3, font=\normalsize}
+}}
 
 \graphicspath{ {./img/} }
 
@@ -26,15 +31,13 @@
 \include{inhalt/def}
 
 \small
-\begin{multicols*}{4}
+\begin{multicols*}{3}
 
 \input{inhalt/zahlensysteme}
 \input{inhalt/digitaltechnik}
 \input{inhalt/informationstheorie}
 \input{inhalt/quellencodierung}
 \input{inhalt/kanalcodierung}
-\input{inhalt/lzw}
-\input{inhalt/huffman}
 \input{inhalt/faltungscode}
 \input{inhalt/jpeg}
 \input{inhalt/audio}
