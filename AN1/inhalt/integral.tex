@@ -1,0 +1,31 @@
+\section{Integral}
+Um die Fläche unter einer Funktion zu berechnen muss man folgende Schritte durchgehen:
+\begin{enumerate}
+    \item Bestimme die Stammfunktion $F(x)$
+    \item Berechne $F(b) - F(a)$
+\end{enumerate}
+\subsection{Stammfunktion}
+Die Stammfunktion $F(x)$ einer Funktion $f(x)$ ist die Funktion, deren Ableitung $f(x)$ ist, also "aufleiten".
+\subsection{Satz}
+Gegeben ist eine Funktion $f$, die auf einem Intervall $I$ stetig ist, und eine beliebige Stamm-
+funktion $F$ von $f$. Dann gilt für alle $a, b \in I$:
+\begin{align*}
+    \int_a^b f(x)\,dx = F(b) - F(a)
+\end{align*}
+\subsection{Integrale von bestimmten Funktionen}
+\subsubsection{Potenz- und Logharithmusfunktionen}
+\begin{itemize}
+    \item $\int a^x dx = \frac{a^x}{ln(a) + C}$
+    \item $\int ln(x) dx = x \cdot ln(x) - x + C$
+    \item $\int log_a(x) dx = \frac{1}{ln(a)} \cdot (x \cdot ln(x) -x) + C$
+\end{itemize}
+\subsubsection{Trigonometrische Funktionen}
+\begin{itemize}
+    \item $\int \sin(x) \, dx = -\cos(x) + C$
+    \item $\int \cos(x) \, dx = \sin(x) + C$
+    \item $\int \tan(x) \, dx = -\ln|\cos(x)| + C$
+    \item $\int (1 + \tan^2(x)) \, dx = \int \frac{1}{\cos^2(x)} \, dx = \tan(x) + C$
+    \item $\int (1 - x^2)^{-1/2} \, dx = \arcsin(x) + C$
+    \item $\int -(1 - x^2)^{-1/2} \, dx = \arccos(x) + C$
+    \item $\int (1 + x^2)^{-1} \, dx = \arctan(x) + C$
+\end{itemize}
