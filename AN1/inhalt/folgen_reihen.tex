@@ -9,7 +9,32 @@
 	a_n & = c \cdot q^{n-1}
 \end{align*}
 \subsubsection{Grenzwert von Folgen}
-%TODO
+\textbf{Fall 1}: Zählergrad < Nennergrad. Dann gilt:
+\begin{align*}
+	\lim_{n \to \infty} \frac{g(n)}{h(n)} & = 0
+\end{align*}
+\begin{align*}
+	\textcolor{red}{\lim_{n \to \infty} \frac{3n^2 + 7n - 15}{n^3 - 2n^2 + n + 10} = 0}
+\end{align*}
+\textbf{Fall 2}: Zählergrad > Nennergrad. Dann gilt:
+\begin{align*}
+	\lim_{n \to \infty} \frac{g(n)}{h(n)} & = \infty \text{ oder } -\infty
+\end{align*}
+\begin{align*}
+	\textcolor{red}{\lim_{n \to \infty} \frac{3n^4 + 7n - 15}{6n^3 - 2n^2 + 10} \to \infty}
+\end{align*}
+\textbf{Fall 3}: Zählergrad = Nennergrad. Dann gilt:
+\begin{align*}
+	\lim_{n \to \infty} \frac{g(n)}{h(n)} & = \frac{\text{führender Term von } g}{\text{führender Term von } h}
+\end{align*}
+\begin{align*}
+	\textcolor{red}{\lim_{n \to \infty} \frac{2n^3 + n^2 + 8n}{5n^3 + 4n^2 + 17} = \frac{2}{5}}
+\end{align*}
+\textbf{Spezialfall}: Folge führt gegen $e \approx 2.718$:
+\begin{align*}
+	((1+\frac{1}{n})^n) & = e
+\end{align*}
+
 \subsection{Rechnen mit Grenzwerten}
 \begin{align*}
 	\lim_{n \to \infty} c \cdot a_n & = c \cdot \lim_{n \to \infty} a_n
@@ -32,4 +57,17 @@
     s_n & = \frac{a_1 \cdot (1-q^n)}{1-q}
 \end{align*}
 \subsubsection{Grenzwert von Reihen}
-%TODO
+\textbf{Arithmetische Reihe}\\
+Geht (divergiert) immer gegen $\infty$ oder $-\infty$
+\\
+\\
+\textbf{Geometrische Reihe}\\
+Eine geometrische Reihe konvergiert genau dann, wenn $|q| < 1$ ist.
+\begin{flushleft}
+    \textit{\textbf{Fall 1}}: $q > 1$ \\
+    Die Reihe strebt gegen $\infty$ oder $-\infty$. \\[0.5em]
+    \textit{\textbf{Fall 2}}: $q \leq -1$ \\
+    Die Reihe springt zwischen positiven und negativen Werten hin und her. \\[0.5em]
+    \textit{\textbf{Fall 3}}: $|q| < 1$ \\
+    Die Reihe strebt gegen $a_1 \cdot \frac{1}{1-q}$.
+\end{flushleft}
