@@ -25,6 +25,7 @@
     \item $sin(x)' = cos(x)$
     \item $cos(x)' = -sin(x)$
     \item $(e^x)' = e^x$
+    \item $(e^{-20x})' = -3 \cdot e^{-3x}$
     \item $(a^x)' = a^x \cdot ln(a)$
     \item $(ln(x))' = \frac{1}{x}$
     \item $(log_a(x))' = \frac{1}{x \cdot ln(a)}$
@@ -33,4 +34,8 @@
 Die Funktionsgleichung für die Tangente von $f(x)$ an der Stelle $x_0$ lautet:
 \begin{align*}
     y = f'(x_0) \cdot (x - x_0) + f(x_0)
+\end{align*}
+\subsection{Newton-Verfahren}
+\begin{align*}
+    x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 \end{align*}
