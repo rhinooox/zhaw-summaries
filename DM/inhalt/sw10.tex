@@ -1,0 +1,80 @@
+\section{Formale Aussagenlogik}
+
+\subsection{Formale Definition}
+Die Syntax der Aussagenlogik (= Menge aller aussagenlogischen Formeln) ist
+durch $N(\{x_1,x_2,...\},\{and,or,not\})$ mit \dots
+\begin{align*}
+	and(A,B) := A \vee B  \\
+	or(A,B) := A \wedge B \\
+	not(A) := \neg A
+\end{align*}
+\dots gegeben.
+\subsubsection{Beispiele}
+\begin{itemize}
+	\item $x_2$
+	\item $((x_1 \wedge x_7) \vee (x_5 \wedge \neg x_0))$
+	\item $\neg\neg\neg(x_3 \wedge \neg x_5)$
+\end{itemize}
+\subsection{Visualisierung}
+
+\begin{align*}
+	(x_1 \wedge x_7) \vee (x_5 \wedge \neg x_0)
+\end{align*}
+
+\begin{center}
+	\begin{tikzpicture}
+		[level distance=1.5cm,
+			level 1/.style={sibling distance=4cm},
+			level 2/.style={sibling distance=2cm}]
+		\node {$\vee$}
+		child {node {$\wedge$}
+				child {node {$x_1$}}
+				child {node {$x_7$}}
+			}
+		child {node {$\wedge$}
+				child {node {$x_5$}}
+				child {node {$\neg$}
+						child {node {$x_0$}}
+					}
+			};
+	\end{tikzpicture}
+\end{center}
+\subsection{Strukturelle Rekursion}
+\begin{itemize}
+    \item $\wedge = min()$
+    \item $\vee = max()$
+\end{itemize}
+\begin{align*}
+    \llbracket(x_1 \wedge x_2) \vee x_3\rrbracket_3(1, 1, 0) &= \max(\llbracket x_1 \wedge x_2\rrbracket_3(1, 1, 0), \llbracket x_3\rrbracket_3(1, 1, 0)) \\
+    &= \max(\min(\llbracket x_1\rrbracket_3(1, 1, 0), \llbracket x_2\rrbracket_3(1, 1, 0)), 0) \\
+    &= \max(\min(1, 1), 0) \\
+    &= \max(1, 0) \\
+    &= 1
+\end{align*}
+\subsection{Normalformen}
+\subsubsection{Definition}
+\begin{itemize}
+\item $K_0 := D_0 := \{x_1, x_2 \ldots \} \cup \{\neg x_1, \neg x_2 \ldots \}$
+\item $K_{n+1} := \{A_1 \wedge \cdots \wedge A_k \mid A_1 \ldots A_k \in D_n\}$
+\item $D_{n+1} := \{A_1 \vee \cdots \vee A_k \mid A_1 \ldots A_k \in K_n\}$
+\end{itemize}
+
+\subsubsection{Beispiele}
+\begin{itemize}
+\item $(\neg x_1 \wedge x_2) \vee x_3 \in D_2$
+\item $(\neg x_1 \vee x_2) \wedge (x_3 \vee x_1) \in K_2$
+\end{itemize}
+
+\subsubsection{Bemerkung}
+Es gelten für alle $n \in \mathbb{N}$:
+\begin{itemize}
+\item $D_n \subsetneq K_{n+1} \cap D_{n+1}$
+\item $K_n \subsetneq D_{n+1} \cap K_{n+1}$
+\end{itemize}
+\subsection{KNF und DNF}
+\subsubsection{Definition}
+Die Formeln in $K_2$ sind in \textbf{konjunktiver Normalform (KNF)}, die
+Formeln in $D_2$ sind in \textbf{disjunktiver Normalform (DNF)}.
+\subsubsection{Satz}
+Zu jeder Formel $A$ existieren äquivalente Formeln $A_K$ in KNF und
+$A_D$ in DNF.

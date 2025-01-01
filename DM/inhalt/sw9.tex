@@ -1,0 +1,63 @@
+\section{Die Peano Axiome}
+\subsection{Axiom 1}
+0 ist eine natürliche Zahl.
+\subsection{Axiom 2}
+Jede natürliche Zahl $k$ hat genau einen Nachfolger $k+1$, der wiederum eine natürliche Zahl ist.
+\subsection{Axiom 3}
+Die Zahl 0 ist die einzige natürliche Zahl, die kein Nachfolger ist.
+\subsection{Axiom 4}
+Jede natürliche Zahl ist Nachfolger von höchstens einer natürlichen Zahl.
+\subsection{Axiom der vollständigen Induktion}
+Ist $A(n)$ eine Eigenschaft (ein Prädikat), sodass...
+\begin{itemize}
+    \item \textbf{Induktionsverankerung (I.V.):} $A(0)$
+    \item \textbf{Induktionsschritt (I.S.):} $\forall{n} \in \N (A(n) \Rightarrow A(n+1))$
+\end{itemize} 
+...dann gilt $\forall{n} \in \N (A(n))$
+
+\section{Induktion}
+Es sei $A(n)$ eine Eigenschaft von natürlichen Zahlen:
+
+\begin{itemize}
+    \item \textbf{Verankerung:} $A(n)$
+    \item \textbf{Schritt:} $\forall n \in \mathbb{N} \quad \big(A(n) \implies A(n+1)\big)$
+\end{itemize}
+\textbf{Induktionsannahme:}
+\begin{align*}
+    \sum_{i=1}^n \frac{1}{i(i+1)} = \frac{n}{n+1}
+\end{align*}
+\textbf{Induktions-Verankerung (IV, $n=0$):}
+\begin{align*}
+    \sum_{i=1}^0 \frac{1}{i(i+1)} = 0 = \frac{0}{0+1}
+\end{align*}
+
+\textbf{Zu zeigen:}
+\begin{align*}
+    \sum_{i=1}^{n+1} \frac{1}{i(i+1)} = \textcolor{red}{\frac{n+1}{n+2}}
+\end{align*}
+
+\textbf{Induktions-Schritt (IS, $n \to n+1$)}
+\begin{align*}
+    &\sum_{i=1}^{n+1} \frac{1}{i(i+1)}\\
+    &= \sum_{i=1}^n \frac{1}{i(i+1)} + \frac{1}{(n+1)((n+1)+1)} \\
+    &= \frac{n}{n+1} + \frac{1}{(n+1)(n+2)} \\
+    &= \frac{n(n+2) + 1}{(n+1)(n+2)} \\
+    &= \frac{n^2 + 2n + 1}{(n+1)(n+2)} \\
+    &= \frac{(n+1)^2}{(n+1)(n+2)} \\
+    &= \textcolor{red}{\frac{n+1}{n+2}}
+\end{align*}
+
+\section{Rekursion}
+\begin{itemize}
+    \item \textbf{Verankerung:} $F(0) = c$
+    \item \textbf{Schritt:} $F(n) = F(k+1) = G(\underbrace{F(k)}_{Selbsbezug},k)$
+\end{itemize}
+\textbf{Beispiel Expontenation von $\N$:}
+\begin{align*}
+    & F(0) = &x^0 = 1 \\
+    & F(n) = &x^n \\
+    & F(n+1) = &(F(n),n)\\
+    & x^{n+1} = &F(n) \cdot n \\
+    & x^{n+1} = &x^n \cdot n
+\end{align*}
+
