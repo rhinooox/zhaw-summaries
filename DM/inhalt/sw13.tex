@@ -1,0 +1,102 @@
+\section{Kongruenz Modulo}
+\subsection{Definition}
+\begin{itemize}
+	\item Für $n \in \N$ und $r,s \in \Z$ gilt:
+	      \begin{align*}
+		      r \equiv_n s \Leftrightarrow n|(r-s)
+	      \end{align*}
+	\item Wir schreiben alternativ auch $r \equiv s \mod n$
+	\item Für jede ganze Zahl $z$ bezeichnen wir mit
+	      \begin{align*}
+		      [z]_n := \{x \in \Z | x \equiv_n z\}
+	      \end{align*}
+	      die Äquivalenzklasse von $z$ bezüglich der Raltion $\equiv_n$ und nennen diese auch die \textbf{Restklasse} von $z$.
+	\item Abkürzend bezeichnen wir $[z]_n$ auch mit $[z]$ oder $\overline{z}$, wenn $n$ aus
+	      dem Kontext hervor geht.
+\end{itemize}
+\subsection{Rechnen mit Restklassen}
+Für ganze Zahlen $x ,x'$ und $y, y'$ gelten
+\begin{itemize}
+	\item $[x] = [x'] \land [y] = [y'] \Rightarrow [x + y] = [x' + y']$
+	\item $[x] = [x'] \land [y] = [y'] \Rightarrow [xy] = [x'y']$
+\end{itemize}
+\subsubsection{Addition und Multiplikation}
+Die vorhergehende Bemerkung rechtfertigt die
+Repräsentatnetnweise Definition der Multiplikation und Addition
+auf Restklassen.
+\begin{align*}
+	 & + : \Z/n{^2} \to \Z/n \quad \mapsto \quad [x]_n + [y]_n := [x + y]_n             \\
+	 & \cdot : \Z/n{^2} \to \Z/n \quad \mapsto \quad [x]_n \cdot [y]_n := [x \cdot y]_n \\
+	 & \quad \text{wobei}                                                               \\
+	 & \quad \Z/n = \Z/ \equiv_n = \{[0]_n, [1]_n, \ldots, [n-1]_n\}
+\end{align*}
+\textbf{Beispiele:}\\
+\begin{itemize}
+	\item $[17]_5 + [3]_5 = [20]_5 = [0]_5$
+	\item $[2]_5 + [3]_5 = [5]_5 = [0]_5$
+	\item $[17]_5 \cdot [3]_5 = [51]_5 = [1]_5$
+	\item $[2]_5 \cdot [3]_5 = [6]_5 = [1]_5$
+\end{itemize}
+\subsection{Additive Inverse in $\Z/n$}
+\subsubsection{Definition}
+Sind $x,y \in \Z/n$, dann ist $x$ das additive Inverse von $y$, falls $x + y = [0]_n$ gilt.
+\subsubsection{Beispiel}
+In $\Z/7$ ist $[3]_7$ das additive Inverse von $[4]_7$, weil $[3]_7 + [4]_7 = [7]_7 = [0]_7$ gilt.
+\subsubsection{$a + x = b$}
+In $\Z/n$ gilt hat jedes Element ein additives Inverses, weswegen alle
+Gleichungen von der Form $a + x = b$ mit $a,b \in \Z$ lösbar sind.\\\\
+\textbf{Beispiel:}\\
+In $\Z/7$ hat die Gleichung
+\begin{align*}
+	[3]_7 + x = [2]_7
+\end{align*}
+die Lösung $x = [2 + (7 - 3)]_7 = [6]_7$.
+\subsection{Multiplikatives Inverse}
+\subsubsection{Definition}
+Sind $x, y \in \mathbb{Z}/n$, dann ist $x$ das \textbf{multiplikative Inverse}
+von $y$, falls $x \cdot y = [1]_n$ gilt. Falls $x$ das multiplikative Inverse von $y$ ist, dann bezeichnen
+wir $x$ auch als $y^{-1}$.
+
+\subsubsection{Beispiel}
+In $\mathbb{Z}/7$ ist $[3]_7$ das multiplikative Inverse von $[5]_7$,
+weil $[3]_7 \cdot [5]_7 = [15]_7 = [1]_7$ gilt.
+\subsection{Satz}
+In $\Z/n$existiert genau dann ein multiplikatives Inverses zu $[x]$, wenn $ggT(n,x) = 1$ gilt,
+Daraus folgt, dass in $\Z/n$ genau dann jedes Element ausser $[0]$ ein multiplikatives
+Inverses, wenn $n$ eine Primzahl ist.
+
+\section{Chinesischer Restsatz}
+Sind $n_1, \ldots, n_k \in \N$ paarweise teilerfremd und $y_1, \ldots, y_k \in \Z$, dann
+hat das Gleichungssystem
+\begin{align*}
+	x & \equiv_{n_1} y_1 \\
+	x & \equiv_{n_2} y_2 \\
+	  & \vdots           \\
+	x & \equiv_{n_k} y_k
+\end{align*}
+eine eindeutige Lösung in $\Z/(n_1, \ldots,n_k)$.
+\subsection{Lösen simultaner Kongruenzen}
+
+Gegeben ein System simultaner Kongruenzen mit zwei Gleichungen:
+\begin{align*}
+	x & \equiv_{n_1} y_1 \\
+	x & \equiv_{n_2} y_2
+\end{align*}
+
+\noindent wobei $n_1$ und $n_2$ teilerfremd sind.
+\begin{enumerate}
+	\item Bestimme mithilfe des Euklidischen Algorithmus Bézout Koeffizienten $a$ und $b$ mit $an_1 + bn_2 = 1$.
+	\item Setze $x_0 := y_1bn_2 + y_2an_1$.
+	\item Die resultierende Gleichung ist $x \equiv_{n_1 \cdot n_2} x_0$.
+\end{enumerate}
+\section{Beispiel}
+\begin{align*}
+    x & \equiv_7 3 \\
+    x & \equiv_5 2 \\
+    x & \equiv_9 6
+\end{align*}
+\subsection{Kleiner Fermat}
+Ist $p \in \PR$ und $a$ kein Vielfaches von $p$, dann gilt:
+\begin{align*}
+    a^{p-1} \equiv_p 1
+\end{align*}

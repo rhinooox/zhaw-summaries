@@ -1,0 +1,112 @@
+\section{Teilbarkeitslehre}
+\subsection{Teilbarkeitsrelation}
+Für $x,y \in \Z$ definieren wir:
+\begin{itemize}
+	\item $y$ ist genau dann ein Vielfaches von $x$, wenn eine ganze Zahl $t \in \Z$
+	      mit $y = t \cdot x$ existiert.
+	\item $x$ ist genau dann ein Teiler $y$, wenn $y$ ein Vielfaches von $x$ ist.
+	      Wenn $x$ ein Teiler von $y$ ist, dann schreiben wir $x|y$.
+	\item Die Menga aller natrürlichen Teiler $T(x) := \{n \in \N | n|x\}$ von der Zahl $x$ besteht
+	      aus allen natrürlichen Zahlen, die $x$ teilen.
+\end{itemize}
+\subsubsection{Beispiele}
+\begin{itemize}
+	\item $T(-4) = \{1,2,4\}$
+	\item $T(1) = \{1\}$
+	\item $T(0) = \N$
+\end{itemize}
+\subsection{Teilen mit Rest}
+Sind $a,b \in \Z$ mit $b \neq 0$, dann gibt es höchstens ein Paar $(m,r) \in \Z^2$ mit:
+\begin{itemize}
+	\item $a = mb + r$
+	\item $0 \leq r < |b|$
+\end{itemize}
+\subsection{Modulo Operator \& Ganzzahlige Division}
+Die Funktion $mod : \Z \times \Z \ \{0\} \to \N$ und $div: \Z \times \Z \ \{0\} \to \Z$ sind so definiert
+, dass \dots
+\begin{align*}
+	a = \text{div}(a,b) \cdot b + \text{mod}(a,b) \\
+	0 \leq \text{mod}(a,b) < |b|
+\end{align*}
+\dots gilt. Die Funktion $mod$ nennt man Modulo Operator und die Funktion $div$ entspricht für  positive
+Zahlen der ganzzahligen Division.
+\subsubsection{Beispiele}
+\begin{itemize}
+	\item Es gilt $17 = 3 \cdot 5 + 2$ und daher $\text{div}(17, 5) = 3$ und
+	      $\text{mod}(17, 5) = 2$.
+	\item Es gilt $22 = -3 \cdot -7 + 1$ und daher $\text{div}(22, -7) = -3$ und
+	      $\text{mod}(22, -7) = 1$.
+	\item Es gilt $-22 = 4 \cdot -7 + 6$ und daher $\text{div}(-22, -7) = 4$ und
+	      $\text{mod}(-22, -7) = 6$.
+	\item Es gilt $-22 = -4 \cdot 7 + 6$ und daher $\text{div}(-22, 7) = -4$ und
+	      $\text{mod}(-22, 7) = 6$.
+\end{itemize}
+\subsection{Grösster gemeinsamer Teiler}
+Es seien $a,a_1, \dots,a_n$ beliebige ganze Zahlen.
+\begin{itemize}
+	\item $T(a_1, \dots,a_n) := T(a_1) \cap \cdots \cap T(a_n)$ ist die Menge aller gemeinsamer natrürlichen
+	      Teiler der Zahlen $a_1, \dots,a_n$.
+	\item $ggT(a_1, \dots,a_n) := \max(T(a_1, \dots,a_n))$ ist der grösste gemeinsame Teiler der Zahlen.
+	      Eine der Zahlen muss jedoch von $0$ verschieden sein.
+	\item Zwei ganze Zahlen $a,b$ heissen teilerfremd, wenn $ggT(a,b) = 1$ gilt.
+\end{itemize}
+\subsection{Euklidischer Algorithmus}
+\subsection{Lemma}
+Für beliebige ganze Zahlen $a,b$ gilt: \\$T(a,b) = T(a,b-a)$.
+\subsubsection{Folgerung}
+\begin{itemize}
+	\item Für ganze Zahlen $a,b$ gilt: $ggT(a,b) = ggT(a,b-a)$.\\
+	\item Für ganze Zahlen $b \geq a$, die nicht beide Null sind, gilt: \\$ggT(a,b) = ggT(a, mod(b,a))$
+	      \\$ggT(a,b) = ggT(mod(a,b),b)$.
+\end{itemize}
+\subsubsection{Beispiel}
+\begin{align*}
+	 & ggT (25, 45) = ggT (25, mod(45, 25)) \\
+	 & = ggT (25, 20)                       \\
+	 & = ggT (mod(25, 20), 20)              \\
+	 & = ggT (5, 20)                        \\
+	 & = ggT (5, mod(20, 5))                \\
+	 & = ggT (5, 0)                         \\
+	 & = 5
+\end{align*}
+\subsection{Lemma von Bézout}
+Sind $x,y \in \Z$ mit $(x,y) \neq (0,0)$, dann gibt es Zahlen $a,b$ sodass
+\begin{align*}
+	ggT(x,y) = ax + by
+\end{align*}
+gilt. Die Zahlen $a,b$ werden Bézout-Koeffizienten genannt.
+\subsubsection{Beispiel}
+\textbf{Gleichung:} 
+\begin{align*}
+    a \cdot 504 + b \cdot 29 = ggT(504,29) = 1
+\end{align*}
+\textbf{Schritt 1: Sukzessives Teilen mit Rest.}
+\begin{align*}
+	504 & = 17 \cdot 29 + 11                                \\
+	29  & = 2 \cdot 11 + 7                                  \\
+	11  & = 1 \cdot 7 + 4                                   \\
+	7   & = 1 \cdot 4 + 3                                   \\
+	4   & = 1 \cdot 3 + \underbrace{1}_{\text{ggT}(504,29)}
+\end{align*}
+\\
+\textbf{Schritt 2: ``Rückwärts einsetzen''.}
+\begin{align*}
+	 & 1 = 4 - 3                                                                                      \\
+	 & = (11-7) - (7-4)                                                                               \\
+	 & = ((504-17 \cdot 29) - (29-2 \cdot 11))                                                        \\
+     & \quad - ((29-2 \cdot 11) - (11-7))                                                                    \\
+	 & = ((504-17 \cdot 29) - (29-2 \cdot (504-17 \cdot 29)))                                         \\
+	 & \quad -((29-2 \cdot (504-17 \cdot 29))                                                       \\
+     & \quad -((504-17 \cdot 29) - (29-2 \cdot (504-17 \cdot 29))))
+\end{align*}
+\\
+\textbf{Schritt 3: Zusammenfassen (Zählen der Vorkommen von 504 und 29).}
+\begin{align*}
+	a & = 1 + 2 + 2 + 1 + 2 = 8                            \\
+	b & = -17 - 1 - (2 \cdot 17) - 1 - (2 \cdot 17) = -139
+\end{align*}
+\\
+\textbf{Test:}
+\begin{align*}
+    8 \cdot 504 - 139 \cdot 29 = 1
+\end{align*}

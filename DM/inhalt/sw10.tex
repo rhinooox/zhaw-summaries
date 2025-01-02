@@ -45,7 +45,8 @@ durch $N(\{x_1,x_2,...\},\{and,or,not\})$ mit \dots
     \item $\vee = max()$
 \end{itemize}
 \begin{align*}
-    \llbracket(x_1 \wedge x_2) \vee x_3\rrbracket_3(1, 1, 0) &= \max(\llbracket x_1 \wedge x_2\rrbracket_3(1, 1, 0), \llbracket x_3\rrbracket_3(1, 1, 0)) \\
+    &\llbracket(x_1 \wedge x_2) \vee x_3\rrbracket_3(1, 1, 0) \\
+	&= \max(\llbracket x_1 \wedge x_2\rrbracket_3(1, 1, 0), \llbracket x_3\rrbracket_3(1, 1, 0)) \\
     &= \max(\min(\llbracket x_1\rrbracket_3(1, 1, 0), \llbracket x_2\rrbracket_3(1, 1, 0)), 0) \\
     &= \max(\min(1, 1), 0) \\
     &= \max(1, 0) \\
@@ -78,3 +79,14 @@ Formeln in $D_2$ sind in \textbf{disjunktiver Normalform (DNF)}.
 \subsubsection{Satz}
 Zu jeder Formel $A$ existieren äquivalente Formeln $A_K$ in KNF und
 $A_D$ in DNF.
+\subsection{Strukturelle Rekursion am Beispiel von tree(A)}
+Die Tiefe eines Baumes:
+\begin{align*}
+	depth(a) := 0\\
+	depth(node(l,r)) := 1 + max(depth(l), depth(r))
+\end{align*}
+Die Summe aller "Blätter":
+\begin{align*}
+	sumLeaf(a) := a\\
+	sumLeaf(node(l,r)) := sumLeaf(l) + sumLeaf(r)
+\end{align*}

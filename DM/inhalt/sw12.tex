@@ -1,0 +1,26 @@
+\section{Primzahlen}
+\subsection{Definition}
+Eine natürliche Zahl $p \in \N$ ist eine Primzahl, wenn $|T(p)| = 2$ gilt. Die Menge aller Primzahlen
+nennen wir $\PR$.\\\\
+Eine natürliche Zahl $p > 1$ ist genau dann eine Primzahl, wenn
+$T(p) = \{1, p\}$ gilt.
+\subsection{Lemma von Euklid}
+Die folgenden Aussagen sind für $p \in \N $ äquivalent.
+\begin{enumerate}
+    \item $p$ ist eine Primzahl.
+    \item $\forall{n,m} \in \N (p|nm \Rightarrow p|n \vee p|m)$
+\end{enumerate}
+\subsection{Eindeutigkeit der Primfaktoren}
+Sind $p_1, \ldots, p_m$ und $q_1, \ldots, q_n$ Primzahlen mit
+\begin{align*}
+    \prod_{i=1}^{m} p_i = \prod_{i=1}^{n} q_i
+\end{align*}
+dann gilt $n=m$ und $p_i = q_i$ für alle $0 \leq i \leq n$
+\subsubsection{Folgerung}
+Es sei $p_i$ jeweils die i-te Primzahl. Für jede natürliche Zahl $n > 1$
+gibt es eine eindeutig bestimmte, endliche Folge $a_1, .., a_k$ von
+natürlichen Zahlen mit $a_k \neq 0$, so dass
+\begin{align*}
+    n = \prod_{i=1}^{k} p_i^{a_i}
+\end{align*}
+gilt.
