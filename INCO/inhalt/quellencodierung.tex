@@ -54,15 +54,54 @@ Um Huffman-Codierung anzuwenden, muss die Wahrscheinlichkeit $P(x_n)$ der Symbol
 \subsection{LZ77}
 Für LZ77 ein Suchbuffer $n_{s}$ und Vorschaubuffer $n_{v}$ definiert.
 Der Token hat das Format (Offset, Länge, Zeichen).
+\begin{itemize}
+    \item Alle Zeichen werden durch Tokens fixer Länge ersetzt.
+    \item Zur Bildung der Tokens werden die Daten durch ein Sliding Window, bestehend aus Such- und Vorschaubuffer, geleitet.
+    \item Im Such-Buffer wird die längste Übereinstimmung mit dem Vorschau-Buffer als Token ausgegeben.
+    \item Keine Übereinstimmung: Token $(0, 0, \text{Zeichen})$ wird verwendet.
+\end{itemize}
 \begin{center}
-	\begin{tabular}{ c c c c }
-		Suchbuffer ($n_{s}$) & Vorschaubuffer ($n_{v}$) & Restdaten & Token \\
-		...                  & ...                      & ...       & ...   \\
-		...                  & ...                      & ...       & ...   \\
-		...                  & ...                      & ...       & ...   \\
-		...                  & ...                      & ...       & ...   \\
-		...                  & ...                      & ...       & ...   \\
-	\end{tabular}
+	\includegraphics[scale=0.27]{lz77}
 \end{center}
-\subsection{LZW}
 
+\subsubsection{Einzelne Tokengrösse}
+\begin{align*}
+\text{Grösse Such-Buffer} + \text{Grösse Vorschau-Buffer} + \text{Zusätzliches Zeichen}
+\end{align*}
+
+\subsubsection{Gesamt}
+\begin{align*}
+\text{Anzahl Tokens} \times \text{Tokengrösse}
+\end{align*}
+
+\subsubsection{Kompressionsrate}
+\begin{align*}
+R = \frac{\text{LZ77 Codierung in Bits}}{\text{String ohne Codierung in Bits}}
+\end{align*}
+
+\noindent
+\textbf{Beim Token:} Die Buffergrösse ist jeweils $\text{roundUp}(\log_2(N))$, wobei $N$ die Zahl ist, bis zu der wir maximal zählen können. \\
+Beispiel Such-Buffer (1 bis 10): $\text{roundUp}(\log_2(10)) = 3.321\ldots = 4$ Bit
+\subsubsection{Decoding}
+\begin{itemize}
+	\item Start mit leerem Such-Buffer
+	\item Bei Tokens ohne Referenz in den Such-Buffer einfach Zeichen ausgeben und in Such-Buffer schieben
+	\item Bei Tokens mit Referenz in den Such-Buffer wird zunächst der referenzierte String ausgegeben und das Symbol im Token
+\end{itemize}
+
+\subsection{LZW}
+\subsubsection{Verfahren}
+\begin{itemize}
+	\item Basic vorinitialisiertes Wörterbuch (Bsp: Einzelsymbole von ASCII), Einzelne Zeichen sind immer im Wörterbuch vorhanden!
+	\item String von links nach rechts lesen, bis der gelesene Teilstring nicht mehr im Wörterbuch vorkommt
+	\item Token enthält nur den Index des schon bestehenden Eintrags im Wörterbuch, nicht aber das neue Zeichen
+\end{itemize}
+\begin{center}
+	\includegraphics[scale=0.5]{lzw1}
+\end{center}
+\subsubsection{Decoding}
+\begin{center}
+	\includegraphics[scale=0.6]{lzw2}
+\end{center}
+Das Zeichen ganz rechts vom Eintrag wird erst bei dem
+nächsten Token übertragen (Überlappung)
