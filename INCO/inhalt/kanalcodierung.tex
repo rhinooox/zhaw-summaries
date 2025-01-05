@@ -91,6 +91,12 @@ Ein 2D Paritätscheck...
 \end{itemize}
 \includegraphics[scale=0.55]{crc_div}
 \subsection{Blockcodes}
+\subsubsection{Eigenschaften}
+\begin{itemize}
+	\item Lineaer $\rightarrow$ Jede Kombination von Codewörtern ist wieder ein Codewort.
+	\item Systematisch $\rightarrow$ Nutzdatenbits sind unverändert im Codewort enthalten.
+\end{itemize}
+
 Lineare Blockcodes werden über eine Generatormatrix
 definiert. Das Codewort entsteht indem die Daten mit der
 Generatormatrix multipliziert werden:\\
@@ -113,6 +119,10 @@ Für Hamming-Codes gilt: Jede Zeile hat gleich viele Einsen wie $d_{min}$.
 \begin{align*}
     \includegraphics[scale=0.5]{blockcode5}
 \end{align*}
+\subsubsection{Fehlererkennung}
+\begin{center}
+	\includegraphics[scale=0.13]{blockcode_d}
+\end{center}
 
 \subsection{Faltungscodes}
 \includegraphics[scale=0.31]{faltungscode}
