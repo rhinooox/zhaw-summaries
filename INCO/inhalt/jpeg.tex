@@ -15,7 +15,7 @@ Das Bild wird  in Lumineszenz (Y) und Chrominanz ($C_r$, $C_b$) aufgeteilt.
 $C_b$ ist der Blauanteil und $C_r$ der Rotanteil.
 \subsubsection{Subsampling}
 \begin{align*}
-	R = \frac{\text{Resultierende Pixel}}{\text{Ursprüngliche Pixel}}
+	R = \frac{\text{Resultierende Pixel}}{\text{Ursprüngliche Pixel}} = \frac{C_r + C_b + Y}{8 * 3}
 \end{align*}
 \begin{itemize}
 	\item Subsampling meint, dass in beiden Chrominanz-Ebenen in der
