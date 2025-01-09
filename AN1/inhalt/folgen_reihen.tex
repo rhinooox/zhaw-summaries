@@ -1,13 +1,5 @@
 \section{Folgen und Reihen}
 \subsection{Folgen}
-\subsubsection{Arithmetische Folge}
-\begin{align*}
-	a_n & = c + (n-1) \cdot d
-\end{align*}
-\subsubsection{Geometrische Folge}
-\begin{align*}
-	a_n & = c \cdot q^{n-1}
-\end{align*}
 
 \subsubsection{Grenzwert von Folgen}
 \textbf{Fall 1}: Zählergrad < Nennergrad. Dann gilt:
@@ -69,12 +61,29 @@
 \begin{align*}
     s_n & = a_1 \cdot \frac{q^n-1}{q-1}
 \end{align*}
+\begin{align*}
+	a_n & = a_1 \cdot q^{n-1}
+\end{align*}
 \begin{itemize}
 	\item $s_n$ = Summe der ersten n Glieder
 	\item $a_1$ = Erstes Glied
 	\item $a_n$ = n-tes Glied
 	\item $q$ = Quotient
 \end{itemize}
+\subsubsection{Explizit und Implizit}
+\begin{itemize}
+	\item \textbf{Explizit}: $a_n = a_1 \cdot q^{n-1}$
+	\item \textbf{Implizit}: $a_{3} = a_2 + x$
+\end{itemize}
+
+\subsubsection{$q$ herausfinden}
+In einer Geometrischen Folge ist gegeben: $a_3 = 12$ und $a_5 = 20$\\
+\begin{align*}
+	q_2 & = \frac{a_5}{a_3}\\
+	q & = (\frac{a_5}{a_3})^{\frac{1}{2}}
+\end{align*}
+
+
 \subsubsection{Grenzwert von Reihen}
 \textbf{Arithmetische Reihe}\\
 Geht (divergiert) immer gegen $\infty$ oder $-\infty$
